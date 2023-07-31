@@ -1,0 +1,109 @@
+{
+  "name": "attendance-tracking",
+  "version": "0.0.1",
+  "description": "Attendance Tracking using ioHook and Electronjs",
+  "author": "Priyansh",
+  "license": "MIT",
+  "keywords": [
+    "ioHook",
+    "Electron",
+    "WebPack"
+  ],
+  "main": "build/electron/main.js",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahsan131-hub/e-attendance.git"
+  },
+  "build": {
+    "productName": "Attendance Tracking",
+    "appId": "com.attendance_tracking.app",
+    "copyright": "Copyright © 2018 Priyansh",
+    "directories": {
+      "output": "dist/"
+    },
+    "files": [
+      "build/**/*",
+      "package.json"
+    ],
+    "win": {
+      "publisherName": "Priyansh",
+      "publish": [
+        "github"
+      ],
+      "target": [
+        "NSIS"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "ahsan131-hub",
+        "repo": "https://github.com/ahsan131-hub/e-attendance.git",
+        "token": "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"
+      }
+    ]
+  },
+  "homepage": "./",
+  "scripts": {
+    "build:dev": "webpack --mode=development --config webpack.config.js",
+    "build:prod": "webpack --mode=production --config webpack.config.js",
+    "build:electron:dev": "webpack --mode=development --config webpack.electron.config.js",
+    "build:electron:prod": "webpack --mode=production --config webpack.electron.config.js",
+    "start": "npm run build:dev && npm run build:electron:dev && npx electron . --serve",
+    "dist": "npm run build:prod && npm run build:electron:prod",
+    "deploy": "electron-builder build --publish always "
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "autoprefixer": "^10.4.14",
+    "babel-loader": "^8.1.0",
+    "css-loader": "5.0.1",
+    "electron": "10.1.2",
+    "electron-builder": "22.8.1",
+    "electron-reload": "1.5.0",
+    "html-webpack-plugin": "^5.5.3",
+    "nsis": "0.0.0",
+    "postcss": "^8.4.26",
+    "style-loader": "2.0.0",
+    "tailwindcss": "^3.3.3",
+    "url-loader": "4.1.1",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1",
+    "webpack-serve": "^4.0.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.9",
+    "electron-log": "^4.2.4",
+    "electron-updater": "^6.1.1",
+    "iohook": "0.9.0",
+    "os": "^0.1.1",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "iohook": {
+    "targets": [
+      "electron-82"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  }
+}

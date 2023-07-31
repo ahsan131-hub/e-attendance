@@ -1,0 +1,530 @@
+@font-face {
+  font-family: Poppins;
+  src: url('./Poppins-ExtraLight.ttf');
+}
+
+body{
+    font-family: Poppins;
+
+}
+.bg-zinc-300 {
+  background-color: #f3f4f6;
+}
+
+.bg-green-500 {
+  background-color: #10b981;
+}
+
+.bg-green-200 {
+  background-color: #a7f3d0;
+}
+.bg-red-200 {
+  background-color: #fde8e8;
+}
+.bg-yellow-200 {
+  background-color: #fefcbf;
+}
+
+.hover\:bg-green-600:hover {
+  background-color: #059669;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+.startWorkBtn {
+  display: block;
+  padding: 10px 5px;
+  width: 100px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  outline: none;
+  background-color: #ef4444;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+.fit-content {
+  width: fit-content;
+}
+.hover\:startWorkBtn:hover {
+  background-color: #dc2626;
+}
+.bg-red-500 {
+  background-color: #ef4444;
+}
+
+.hover\:bg-red-600:hover {
+  background-color: #dc2626;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-30 {
+  width: 30px !important;
+}
+.bg-red-800 {
+  background-color: #991b1b;
+}
+.border-red-700 {
+  border-color: #b91c1c;
+}
+.text-red-700 {
+  color: #b91c1c;
+}
+.border {
+  border-width: 1px;
+}
+
+.border-gray-300 {
+  border-color: #d1d5db;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:border-blue-500:focus {
+  border-color: #2563eb;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.border-blue-700 {
+  border-color: #1d4ed8;
+}
+
+.text-blue-800 {
+  color: #1e3a8a;
+}
+
+.hover\:text-white:hover {
+  color: #ffffff;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.h-64 {
+  height: 16rem;
+}
+
+.border-y-gray-800 {
+  border-color: #1f2937;
+}
+
+.bg-zinc-400 {
+  background-color: #f3f4f6;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-5 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.w-20 {
+  width: 5rem;
+}
+.w-14 {
+  width: 3.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.h-80 {
+  height: 20rem;
+}
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-30 {
+  height: 7.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.align-middle {
+  align-items: center;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.text-blue-800 {
+  color: #1e3a8a;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+/* .btn_md {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0.25rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+} */
+.btn_break {
+  padding-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  border-width: 1px;
+  border-color: #1d4ed8;
+  color: #1e40af;
+}
+.btn_select {
+  width: 150px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  border-color: #1d4ed8;
+  color: #1e40af;
+  display: flex;
+  flex-direction: column;
+}
+.btn_select:hover {
+  border-color: #1e40af;
+}
+.btn_md:hover {
+  color: #ffffff;
+  background-color: #1e40af;
+}
+.time-ball {
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 5px !important;
+  border-width: 1px !important;
+  border-color: #1d4ed8 !important;
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+details > div {
+  display: none;
+  padding: 10px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  /* margin-top: 10px; */
+}
+
+details[open] > div {
+  display: block;
+}
+#older-data {
+  display: grid;
+  grid-gap: 20px;
+  list-style: none !important;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.p-5 {
+  padding: 10px;
+}
+details > summary {
+  list-style: none !important;
+}
+details > summary::marker, /* Latest Chrome, Edge, Firefox */
+details > summary::-webkit-details-marker /* Safari */ {
+  display: none !important;
+}
+
+.btn_select {
+  display: inline-block;
+  position: relative;
+}
+.btn_select summary {
+  cursor: pointer;
+  /* padding: 10px; */
+ 
+  
+  outline: none;
+}
+.btn_select div {
+  position: absolute;
+  top: 99%;
+  left: 0px;
+  
+  z-index: 1;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+}
+.btn_select.open div {
+  display: block;
+}
+.btn_md {
+  display: block;
+  padding: 10px 5px;
+  width: 150px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+  outline: none;
+  border-color: #1d4ed8;
+  color: #1e40af;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* First column is twice as wide as the other two columns */
+  grid-template-rows: repeat(2, 1fr);
+  /* Adjust this as needed, 100vh means the grid will take the full viewport height */
+}
+
+.item {
+  padding: 10px;
+  padding-right: 0px;
+}
+
+.item-full {
+  grid-row: 1 / -1; /* This spans the third column from the first row to the last row */
+  grid-column: 3;
+  justify-items: center; /* This spans the third row in the grid */
+  /* Add any styling you want for the third column */
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: -30px;
+  width: 100%;
+  height: 120%;
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+  color: #1e40af;
+  /* color: #ffffff; */
+  padding: 20px;
+  background-color: #ffffff!important;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 400px;
+  margin: 150px auto;
+}
+
+.close {
+  color: #f44336;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* .close:hover {
+  color: #f44336;
+} */
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select,
+input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  margin-top: 15px;
+  background-color: #ffffff;
+  color: #1e40af;
+  border: none;
+  border: 1px solid #1e40af;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #1e40af;
+  color: #ffffff;
+}
+
+
+button[disabled]{
+  border: 1px solid #999999;
+  /* background-color: #cccccc; */
+  color: #666666;
+}
+button[disabled]:hover{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px; /* Set the desired fixed width for the labels */
+  height: 30px; /* Set the desired height for the labels */
+  /* background-color: #1e40af; */
+  /* color: #ffffff; */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.time-label {
+  flex: 1;
+  text-align: center;
+}
+
+.arial-label {
+  font-family: Arial, sans-serif;
+}

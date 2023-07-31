@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link href=./style.css rel=stylesheet><title>Attendance</title><script defer=defer src=main.js></script></head><style>/* Hide the arrow for the summary element */
+    details > summary {
+      list-style: none;
+    }
+
+    /* Hide the arrow for different browsers */
+    details > summary::-webkit-details-marker {
+      display: none; /* For Safari */
+    }
+    details > summary::marker,
+    details > summary::-webkit-details-marker {
+      display: none; /* For Chrome, Edge, and Firefox */
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    /* Optional: Style the track and thumb to make the scrollbar completely invisible */
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }</style><body class=bg-zinc-300><div id=alerts-box><div id=successAlert class="bg-green-500 hover:bg-green-600 hidden text-white font-bold py-2 px-4 rounded">Success!</div><div id=errorAlert class="bg-red-500 hover:bg-red-600 hidden text-white font-bold py-2 px-4 rounded">Error!</div></div><div id=login-screen><div class="w-full h-screen flex justify-center"><div class="justify-start items-center h-screen flex flex-col text-center"><h1 class="text-4xl font-bold">Login</h1><form class="flex flex-col w-96" id=loginForm><input type=text placeholder=Email name=email id=username required class="px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 my-2"> <input type=password name=password placeholder=Password id=password required class="px-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 my-2"> <button type=submit class=btn_md style="display: flex; justify-content: center; width: auto">Login</button></form></div></div></div><div id=main-screen class=hidden><header><div class="flex flex-row justify-between"><div class="flex flex-col" style="justify-content: flex-end"><details id=dropdown class="btn_select flex-col"><summary class="flex flex-row rounded-full" style="border-radius: 50px; min-width: 120px"><img src=https://www.thesparksfoundationsingapore.org/images/logo_small.png alt=logo height=25px width=25px style="border-radius: 50px" class=m-2><h1 class=text-blue-800 style="font-size: medium; margin-right: 5px">Hi,</h1><h1 class=text-blue-800 style="font-size: medium" id=display-user-name>Name</h1></summary><div class="w-full shadow" style="margin-top: 5px"><button type=button class=btn_md name=leave-btn id=openModalBtn>Leave Request</button> <button type=button id=logout-btn class=btn_md name=logout>Logout</button></div></details></div><div class="flex flex-col"><hr class=""><button type=button class=btn_md disabled=disabled style="width: 100px" name=punch-in-btn id=punch-in-btn>PUNCH IN</button></div></div></header><section class=""><div class="mt-10 h-64"><label class="text-blue-800 text-2xl pl-2 mt-10 arial-label" style="font-weight: bolder">TODAY</label><div class="flex flex-row justify-center mt-10 w-full"><div class="flex flex-col w-96"><div class=grid-container><div class="item flex justify-between w-full"><div style="width: 116px"><label class="text-blue-800 font-bold text-xl">Productivity</label></div><div><label class="text-blue-800 font-bold text-xl">:</label></div></div><div class=item><div class=time-container><label class="text-blue-800 font-bold text-xl time-label" id=productivityTime>00:00:00</label></div></div><div class=item></div><div class="item flex justify-between w-full"><div><label class="text-blue-800 font-bold text-xl">Break</label></div><div><label class="text-blue-800 font-bold text-xl">:</label></div></div><div class=item><div class=time-container><label class="text-blue-800 font-bold text-xl time-label" id=breakTime>00:00:00</label></div></div><div class=""><button type=button class=btn_md style="height: 35px;
+                      min-width: 90px; /* Set the minimum width */
+                      max-width: 90px;
+                      padding: 0px;
+                      margin-top: 12px;
+
+                      display: flex;
+                      justify-content: center; /* Center the text horizontally */
+                      align-items: center; /* Center the text vertically */
+                      outline: none;" disabled=disabled name=pause-btn id=pause-btn>Take A Break</button></div><div class="item flex justify-between w-full"><div class=""><label class="text-blue-800 font-bold text-xl">Idle</label></div><div><label class="text-blue-800 font-bold text-xl">:</label></div></div><div class=item><div class=time-container><label class="text-blue-800 font-bold text-xl time-label" id=idleTime>00:00:00</label></div></div><div class=item></div></div></div></div></div><label class="text-blue-800 font-bold text-2xl pl-2 arial-label" style="padding-top: 10px">OLDER</label><div class="overflow-y-scroll h-80 w-full" id=older-data></div></section><div id=notification class=hidden><p id=message></p><button id=close-button onclick=closeNotification()>Close</button> <button id=restart-button onclick=restartApp() class=hidden>Restart</button></div></div><div id=leaveModal class=modal><div class=modal-content><span class=close>&times;</span><h2>Leave Request</h2><form id=leaveForm><label for=leaveType>Leave Type: <span style="color: red">*</span></label> <select id=leaveType name=leave_type><option value=1>Personal Leave</option><option value=3>Casual Leave</option><option value=2>Sick Leave</option></select> <label for=fromDate>From Date: <span style="color: red">*</span></label> <input type=date id=fromDate name=from_date required> <label for=toDate>To Date: <span style="color: red">*</span></label> <input type=date id=toDate name=to_date required> <label for=reason>Reason:</label> <textarea id=reason name=reason rows=4></textarea><div class="flex align-middle" style="display: flex; align-items: center; text-align: center"><label>Paid:</label> <input type=radio id=paidYes name=paid value=1 style="margin-top: 5px"> <label for=paidYes>Yes</label> <input type=radio id=paidNo name=paid value=0 style="margin-top: 5px"> <label for=paidNo>No</label></div><button type=submit>Submit</button></form></div></div></body><script>const dropdown = document.getElementById("dropdown");
+    dropdown.addEventListener("toggle", () => {
+      if (dropdown.open) {
+        dropdown.classList.add("open");
+      } else {
+        dropdown.classList.remove("open");
+      }
+    });</script><script src=index.js></script></html>
